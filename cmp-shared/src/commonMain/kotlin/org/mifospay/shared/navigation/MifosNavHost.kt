@@ -172,7 +172,7 @@ internal fun MifosNavHost(
                 navController.navigateToShowQrScreen()
             },
             onPay = navController::navigateToTransferOptions,
-            navigateToTransactionDetail = navController::navigateToSpecificTransaction,
+            navigateToTransactionDetail = navController::navigateToTransactionDetail,
             navigateToAccountDetail = navController::navigateToSavingAccountDetails,
             navigateToHistory = navController::navigateToHistory,
         )

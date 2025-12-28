@@ -141,7 +141,7 @@ internal fun HomeScreen(
     onNavigateBack: () -> Unit,
     onRequest: (String) -> Unit,
     onPay: () -> Unit,
-    navigateToTransactionDetail: (Long, Long) -> Unit,
+    navigateToTransactionDetail: (Long) -> Unit,
     navigateToAccountDetail: (Long) -> Unit,
     navigateToHistory: () -> Unit,
     modifier: Modifier = Modifier,
@@ -164,7 +164,7 @@ internal fun HomeScreen(
             is HomeEvent.NavigateToSendScreen -> onPay()
             is HomeEvent.NavigateToClientDetailScreen -> {}
             is HomeEvent.NavigateToTransactionDetail -> {
-                navigateToTransactionDetail(event.accountId, event.transactionId)
+                navigateToTransactionDetail(event.transactionId)
             }
 
             is HomeEvent.NavigateToTransactionScreen -> navigateToHistory()
